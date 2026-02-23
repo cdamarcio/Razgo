@@ -3,146 +3,545 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAZZ - Engenharia, Educação & Tecnologia</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --mazz-blue: #001f3f;
-            --mazz-gold: #ffc107;
-            --mazz-dark: #00152b;
-            --mazz-gray: #6c757d;
-            --mazz-light: #f8f9fa;
-        }
-
-        body { padding-top: 85px; font-family: 'Inter', sans-serif; background-color: #ffffff; color: var(--mazz-dark); overflow-x: hidden; }
-
-        /* NAVBAR */
-        .navbar { background: rgba(0, 31, 63, 0.98) !important; backdrop-filter: blur(12px); border-bottom: 4px solid var(--mazz-gold); padding: 15px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
-        .navbar-brand { font-size: 1.8rem; font-weight: 800; letter-spacing: 2px; color: white !important; }
-        .nav-link { color: rgba(255, 255, 255, 0.85) !important; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; margin: 0 10px; transition: 0.3s; }
-        .nav-link:hover, .nav-link.active { color: var(--mazz-gold) !important; }
-
-        /* HERO */
-        .hero-section { background: linear-gradient(135deg, var(--mazz-blue) 0%, var(--mazz-dark) 100%); color: white; padding: 100px 0; position: relative; }
-        .hero-title { font-weight: 800; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; margin-bottom: 20px; }
-
-        /* CARDS SERVIÇOS */
-        .feature-card { border: 1px solid #eee; border-radius: 20px; transition: 0.4s; background: #fff; padding: 30px; height: 100%; display: flex; flex-direction: column; text-align: center; }
-        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--mazz-gold); }
-
-        /* DEPOIMENTOS */
-        .testimonials-section { background-color: var(--mazz-light); padding: 80px 0; }
-        .testimonial-item { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); height: 100%; border-top: 4px solid transparent; transition: 0.3s; }
-        .testimonial-item:hover { border-top: 4px solid var(--mazz-gold); }
-        .testimonial-text { font-size: 0.9rem; font-style: italic; color: var(--mazz-gray); margin-bottom: 15px; }
-        .user-info img { width: 45px; height: 45px; border-radius: 50%; margin-right: 12px; border: 2px solid var(--mazz-gold); }
-        .user-name { font-weight: 800; font-size: 0.9rem; color: var(--mazz-blue); margin: 0; }
-        .user-role { font-size: 0.75rem; color: var(--mazz-gold); margin: 0; font-weight: 600; }
-
-        /* FOOTER */
-        .mazz-footer { background-color: #f9f9f9; padding: 40px 0 20px; border-top: 1px solid #ececec; margin-top: auto; text-align: center; }
-        .footer-copyright { font-weight: 700; color: var(--mazz-dark); }
-        .footer-divider { width: 50px; height: 2px; background: var(--mazz-gold); margin: 15px auto; }
-        .footer-dev { font-size: 0.8rem; color: var(--mazz-gray); }
-        .footer-dev a { color: #198754; text-decoration: none; font-weight: 700; }
-    </style>
+    <title>RAZGO - Central de Concursos Públicos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body>
+    <!-- Loading Screen -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="loader-logo">RAZGO</div>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">MAZZ</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto text-center">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="cursos.html">Cursos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="academico.html">Academico</a></li>
-                    <li class="nav-item"><a class="nav-link" href="concursos.html">Concursos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="laudos.html">Laudos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre Nos</a></li>
-                </ul>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon"><i class="fas fa-bolt"></i></span>
+                <span class="logo-text">RAZGO</span>
+            </a>
+            
+            <div class="nav-menu">
+                <a href="#inicio" class="nav-link active">Início</a>
+                <a href="#concursos" class="nav-link">Concursos</a>
+                <a href="#estados" class="nav-link">Por Estado</a>
+                <a href="#apostilas" class="nav-link">Apostilas</a>
+                <a href="#cursos" class="nav-link">Cursos</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="btn-search"><i class="fas fa-search"></i></button>
+                <button class="btn-login">Entrar</button>
+                <button class="btn-menu-mobile"><i class="fas fa-bars"></i></button>
             </div>
         </div>
     </nav>
 
-    <header class="hero-section text-center">
-        <div class="container">
-            <h1 class="hero-title">ENGENHARIA, EDUCAÇÃO<br>& TECNOLOGIA</h1>
-            <p class="lead mb-5 opacity-75">Soluções multidisciplinares com rigor técnico e atuação nacional.</p>
-            <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="cursos.html" class="btn btn-warning btn-lg fw-bold px-4">VER CURSOS</a>
-                <a href="laudos.html" class="btn btn-outline-light btn-lg fw-bold px-4">LAUDOS TÉCNICOS</a>
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-bg">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-fire"></i>
+                <span>+500 concursos ativos</span>
+            </div>
+            
+            <h1 class="hero-title">
+                Encontre seu <span class="text-gradient">concurso dos sonhos</span>
+                <br>em um só lugar
+            </h1>
+            
+            <p class="hero-description">
+                A RAZGO é a plataforma mais completa de concursos públicos do Brasil. 
+                Filtre por estado, área, salário e nunca perca uma oportunidade.
+            </p>
+
+            <div class="hero-search">
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" placeholder="Buscar por cargo, órgão ou estado...">
+                    <button class="btn-primary">Buscar</button>
+                </div>
+                <div class="search-tags">
+                    <span>Populares:</span>
+                    <a href="#" class="tag">Polícia Federal</a>
+                    <a href="#" class="tag">Banco do Brasil</a>
+                    <a href="#" class="tag">INSS</a>
+                    <a href="#" class="tag">Professor</a>
+                </div>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="15420">0</div>
+                    <div class="stat-label">Vagas Disponíveis</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="847">0</div>
+                    <div class="stat-label">Concursos Ativos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="2.5">0</div>
+                    <div class="stat-label">Milhões de Usuários</div>
+                </div>
             </div>
         </div>
-    </header>
 
-    <section class="container my-5 py-4">
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="feature-card">
-                    <h3 class="fw-bold h4">Educação</h3>
-                    <p class="text-muted small">Cursos e NRs com certificação profissional para empresas e indivíduos.</p>
-                    <a href="cursos.html" class="btn btn-link text-primary fw-bold text-decoration-none mt-auto">Saber mais &rarr;</a>
+        <div class="hero-visual">
+            <div class="floating-card card-1">
+                <div class="card-icon"><i class="fas fa-briefcase"></i></div>
+                <div class="card-info">
+                    <div class="card-title">PC-DF</div>
+                    <div class="card-subtitle">1.800 vagas</div>
                 </div>
+                <div class="card-salary">R$ 12.500</div>
             </div>
-            <div class="col-md-4">
-                <div class="feature-card">
-                    <h3 class="fw-bold h4">Engenharia</h3>
-                    <p class="text-muted small">Laudos, perícias e consultoria técnica em Civil, Ambiental e SST.</p>
-                    <a href="laudos.html" class="btn btn-link text-primary fw-bold text-decoration-none mt-auto">Saber mais &rarr;</a>
+            
+            <div class="floating-card card-2">
+                <div class="card-icon"><i class="fas fa-university"></i></div>
+                <div class="card-info">
+                    <div class="card-title">TRT</div>
+                    <div class="card-subtitle">Técnico Judiciário</div>
                 </div>
+                <div class="card-salary">R$ 8.200</div>
             </div>
-            <div class="col-md-4">
-                <div class="feature-card">
-                    <h3 class="fw-bold h4">Concursos</h3>
-                    <p class="text-muted small">Preparatórios de elite com foco em resultados e aprovação real.</p>
-                    <a href="concursos.html" class="btn btn-link text-primary fw-bold text-decoration-none mt-auto">Saber mais &rarr;</a>
+            
+            <div class="floating-card card-3">
+                <div class="card-icon"><i class="fas fa-hospital"></i></div>
+                <div class="card-info">
+                    <div class="card-title">SUS</div>
+                    <div class="card-subtitle">Enfermagem</div>
                 </div>
+                <div class="card-salary">R$ 4.800</div>
             </div>
         </div>
     </section>
 
-    <section class="testimonials-section">
+    <!-- Quick Filters -->
+    <section class="quick-filters">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold" style="color: var(--mazz-blue);">O QUE DIZEM NOSSOS CLIENTES</h2>
-                <div class="footer-divider"></div>
-            </div>
-            <div class="row g-3">
-                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Material da SEFA-PA excelente, focado e muito atualizado.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Ricardo+Souza&background=001f3f&color=fff"><div><p class="user-name">Ricardo Souza</p><p class="user-role">Concursos</p></div></div></div></div>
-                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Laudo de reforma entregue com agilidade e rigor técnico.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Ana+Paula&background=001f3f&color=fff"><div><p class="user-name">Ana Paula</p><p class="user-role">Engenharia</p></div></div></div></div>
-                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Consultoria no doutorado foi essencial para minha tese.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Felipe+Moraes&background=001f3f&color=fff"><div><p class="user-name">Felipe Moraes</p><p class="user-role">Acadêmico</p></div></div></div></div>
-                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Treinamento de NR-35 muito prático e profissional.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Marcos+Silva&background=001f3f&color=fff"><div><p class="user-name">Marcos Silva</p><p class="user-role">SST</p></div></div></div></div>
-                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Suporte para estágio EAD rápido e sem burocracia.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Juliana+Costa&background=001f3f&color=fff"><div><p class="user-name">Juliana Costa</p><p class="user-role">Estudante</p></div></div></div></div>
-                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Licenciamento ambiental resolvido com maestria pela MAZZ.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Carlos+Lima&background=001f3f&color=fff"><div><p class="user-name">Carlos Lima</p><p class="user-role">Ambiental</p></div></div></div></div>
-                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Didática do curso de Python voltada para o mercado real.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Lucas+Oliveira&background=001f3f&color=fff"><div><p class="user-name">Lucas Oliveira</p><p class="user-role">Tecnologia</p></div></div></div></div>
-                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Vistoria cautelar detalhada, nos deu segurança jurídica.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Beatriz+Melo&background=001f3f&color=fff"><div><p class="user-name">Beatriz Melo</p><p class="user-role">Construtora</p></div></div></div></div>
-                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Aprovado no TCC com nota máxima. Obrigado MAZZ!</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Andre+Santos&background=001f3f&color=fff"><div><p class="user-name">André Santos</p><p class="user-role">Técnico</p></div></div></div></div>
-                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">O sistema de gestão superou nossas expectativas de TI.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Patricia+Lopes&background=001f3f&color=fff"><div><p class="user-name">Patrícia Lopes</p><p class="user-role">Empresária</p></div></div></div></div>
-                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Videoaulas para o SEDUC-PA são as melhores do mercado.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Fernanda+Rocha&background=001f3f&color=fff"><div><p class="user-name">Fernanda Rocha</p><p class="user-role">Educação</p></div></div></div></div>
-                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Consultoria em SST fundamental para nossa adequação.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Gustavo+Xavier&background=001f3f&color=fff"><div><p class="user-name">Gustavo Xavier</p><p class="user-role">Indústria</p></div></div></div></div>
-                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Atendimento nacional com excelência. Recomendo sempre.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Renato+Gomes&background=001f3f&color=fff"><div><p class="user-name">Renato Gomes</p><p class="user-role">Consultor</p></div></div></div></div>
-                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Formatação ABNT perfeita e suporte acadêmico constante.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Camila+Vilela&background=001f3f&color=fff"><div><p class="user-name">Camila Vilela</p><p class="user-role">Acadêmico</p></div></div></div></div>
-                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Treinamentos práticos que realmente engajam a equipe.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Roberto+Alves&background=001f3f&color=fff"><div><p class="user-name">Roberto Alves</p><p class="user-role">SST</p></div></div></div></div>
-                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Análise de dados no mestrado impecável. Muito grata.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Sandra+Brito&background=001f3f&color=fff"><div><p class="user-name">Sandra Brito</p><p class="user-role">Mestrado</p></div></div></div></div>
-                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Plataforma de cursos intuitiva e suporte nota 10.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Tiago+Mendes&background=001f3f&color=fff"><div><p class="user-name">Tiago Mendes</p><p class="user-role">Eletricista</p></div></div></div></div>
-                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">O laudo para nosso condomínio foi vital para a reforma.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Daniela+Ferraz&background=001f3f&color=fff"><div><p class="user-name">Daniela Ferraz</p><p class="user-role">Síndica</p></div></div></div></div>
+            <div class="filters-scroll">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th-large"></i> Todos
+                </button>
+                <button class="filter-btn" data-filter="federal">
+                    <i class="fas fa-landmark"></i> Federal
+                </button>
+                <button class="filter-btn" data-filter="estadual">
+                    <i class="fas fa-building"></i> Estadual
+                </button>
+                <button class="filter-btn" data-filter="municipal">
+                    <i class="fas fa-city"></i> Municipal
+                </button>
+                <button class="filter-btn" data-filter="superior">
+                    <i class="fas fa-graduation-cap"></i> Superior
+                </button>
+                <button class="filter-btn" data-filter="medio">
+                    <i class="fas fa-school"></i> Médio
+                </button>
+                <button class="filter-btn" data-filter="urgente">
+                    <i class="fas fa-clock"></i> Inscrições Abertas
+                </button>
             </div>
         </div>
     </section>
 
-    <footer class="mazz-footer">
+    <!-- Main Content -->
+    <main class="main-content" id="concursos">
         <div class="container">
-            <div class="footer-copyright">&copy; 2026 MAZZ. Todos os direitos reservados. Goiânia - GO.</div>
-            <div class="footer-divider"></div>
-            <div class="footer-dev">Desenvolvido por: <a href="https://www.kmprojetos.eng.br/" target="_blank">KM Engenharia & Tecnologia</a></div>
+            <div class="content-header">
+                <div class="section-title">
+                    <h2>Concursos em Destaque</h2>
+                    <p>As melhores oportunidades selecionadas para você</p>
+                </div>
+                
+                <div class="view-options">
+                    <button class="view-btn active" data-view="grid"><i class="fas fa-grid-2"></i></button>
+                    <button class="view-btn" data-view="list"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+
+            <!-- Contest Grid -->
+            <div class="contests-grid" id="contestsContainer">
+                <!-- Card 1 -->
+                <article class="contest-card featured" data-category="federal superior">
+                    <div class="card-badge urgent">Inscrições Abertas</div>
+                    <div class="card-header">
+                        <div class="org-logo">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="org-info">
+                            <h3>Polícia Federal</h3>
+                            <span class="org-type">Federal</span>
+                        </div>
+                        <button class="btn-favorite"><i class="far fa-heart"></i></button>
+                    </div>
+                    
+                    <div class="card-body">
+                        <h4 class="position-title">Agente de Polícia Federal</h4>
+                        <div class="position-details">
+                            <span class="detail"><i class="fas fa-map-marker-alt"></i> Nacional</span>
+                            <span class="detail"><i class="fas fa-graduation-cap"></i> Superior</span>
+                        </div>
+                        
+                        <div class="salary-box">
+                            <div class="salary-label">Remuneração Inicial</div>
+                            <div class="salary-value">R$ 23.847,76</div>
+                        </div>
+
+                        <div class="vacancy-info">
+                            <div class="vacancy-count">
+                                <i class="fas fa-users"></i>
+                                <span>1.500 vagas</span>
+                            </div>
+                            <div class="vacancy-levels">
+                                <span class="level">Ampl</span>
+                                <span class="level">PCD</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="deadline">
+                            <i class="fas fa-hourglass-half"></i>
+                            <div class="deadline-info">
+                                <span class="deadline-label">Inscrição até</span>
+                                <span class="deadline-date">15/03/2026</span>
+                            </div>
+                        </div>
+                        <button class="btn-details">Ver Detalhes</button>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="contest-card" data-category="federal medio">
+                    <div class="card-header">
+                        <div class="org-logo">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="org-info">
+                            <h3>Banco do Brasil</h3>
+                            <span class="org-type">Federal</span>
+                        </div>
+                        <button class="btn-favorite"><i class="far fa-heart"></i></button>
+                    </div>
+                    
+                    <div class="card-body">
+                        <h4 class="position-title">Escriturário</h4>
+                        <div class="position-details">
+                            <span class="detail"><i class="fas fa-map-marker-alt"></i> Nacional</span>
+                            <span class="detail"><i class="fas fa-school"></i> Médio</span>
+                        </div>
+                        
+                        <div class="salary-box">
+                            <div class="salary-label">Remuneração Inicial</div>
+                            <div class="salary-value">R$ 3.644,57</div>
+                        </div>
+
+                        <div class="vacancy-info">
+                            <div class="vacancy-count">
+                                <i class="fas fa-users"></i>
+                                <span>4.000 vagas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="deadline">
+                            <i class="fas fa-hourglass-half"></i>
+                            <div class="deadline-info">
+                                <span class="deadline-label">Inscrição até</span>
+                                <span class="deadline-date">28/02/2026</span>
+                            </div>
+                        </div>
+                        <button class="btn-details">Ver Detalhes</button>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="contest-card" data-category="estadual superior">
+                    <div class="card-header">
+                        <div class="org-logo">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <div class="org-info">
+                            <h3>TJ-SP</h3>
+                            <span class="org-type">Estadual</span>
+                        </div>
+                        <button class="btn-favorite"><i class="far fa-heart"></i></button>
+                    </div>
+                    
+                    <div class="card-body">
+                        <h4 class="position-title">Escrevente Técnico Judiciário</h4>
+                        <div class="position-details">
+                            <span class="detail"><i class="fas fa-map-marker-alt"></i> São Paulo</span>
+                            <span class="detail"><i class="fas fa-graduation-cap"></i> Superior</span>
+                        </div>
+                        
+                        <div class="salary-box">
+                            <div class="salary-label">Remuneração Inicial</div>
+                            <div class="salary-value">R$ 7.847,32</div>
+                        </div>
+
+                        <div class="vacancy-info">
+                            <div class="vacancy-count">
+                                <i class="fas fa-users"></i>
+                                <span>845 vagas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="deadline">
+                            <i class="fas fa-hourglass-half"></i>
+                            <div class="deadline-info">
+                                <span class="deadline-label">Inscrição até</span>
+                                <span class="deadline-date">10/03/2026</span>
+                            </div>
+                        </div>
+                        <button class="btn-details">Ver Detalhes</button>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="contest-card featured" data-category="federal superior">
+                    <div class="card-badge new">Novo Edital</div>
+                    <div class="card-header">
+                        <div class="org-logo">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div class="org-info">
+                            <h3>TRF 3ª Região</h3>
+                            <span class="org-type">Federal</span>
+                        </div>
+                        <button class="btn-favorite"><i class="far fa-heart"></i></button>
+                    </div>
+                    
+                    <div class="card-body">
+                        <h4 class="position-title">Analista Judiciário</h4>
+                        <div class="position-details">
+                            <span class="detail"><i class="fas fa-map-marker-alt"></i> SP e MS</span>
+                            <span class="detail"><i class="fas fa-graduation-cap"></i> Superior</span>
+                        </div>
+                        
+                        <div class="salary-box">
+                            <div class="salary-label">Remuneração Inicial</div>
+                            <div class="salary-value">R$ 12.847,63</div>
+                        </div>
+
+                        <div class="vacancy-info">
+                            <div class="vacancy-count">
+                                <i class="fas fa-users"></i>
+                                <span>45 vagas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="deadline">
+                            <i class="fas fa-hourglass-half"></i>
+                            <div class="deadline-info">
+                                <span class="deadline-label">Inscrição até</span>
+                                <span class="deadline-date">05/03/2026</span>
+                            </div>
+                        </div>
+                        <button class="btn-details">Ver Detalhes</button>
+                    </div>
+                </article>
+
+                <!-- Card 5 -->
+                <article class="contest-card" data-category="municipal medio">
+                    <div class="card-header">
+                        <div class="org-logo">
+                            <i class="fas fa-city"></i>
+                        </div>
+                        <div class="org-info">
+                            <h3>Prefeitura de Curitiba</h3>
+                            <span class="org-type">Municipal</span>
+                        </div>
+                        <button class="btn-favorite"><i class="far fa-heart"></i></button>
+                    </div>
+                    
+                    <div class="card-body">
+                        <h4 class="position-title">Guarda Municipal</h4>
+                        <div class="position-details">
+                            <span class="detail"><i class="fas fa-map-marker-alt"></i> Curitiba/PR</span>
+                            <span class="detail"><i class="fas fa-school"></i> Médio</span>
+                        </div>
+                        
+                        <div class="salary-box">
+                            <div class="salary-label">Remuneração Inicial</div>
+                            <div class="salary-value">R$ 4.521,89</div>
+                        </div>
+
+                        <div class="vacancy-info">
+                            <div class="vacancy-count">
+                                <i class="fas fa-users"></i>
+                                <span>200 vagas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="deadline">
+                            <i class="fas fa-hourglass-half"></i>
+                            <div class="deadline-info">
+                                <span class="deadline-label">Inscrição até</span>
+                                <span class="deadline-date">20/03/2026</span>
+                            </div>
+                        </div>
+                        <button class="btn-details">Ver Detalhes</button>
+                    </div>
+                </article>
+
+                <!-- Card 6 -->
+                <article class="contest-card" data-category="estadual superior">
+                    <div class="card-header">
+                        <div class="org-logo">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="org-info">
+                            <h3>SES-SP</h3>
+                            <span class="org-type">Estadual</span>
+                        </div>
+                        <button class="btn-favorite"><i class="far fa-heart"></i></button>
+                    </div>
+                    
+                    <div class="card-body">
+                        <h4 class="position-title">Médico</h4>
+                        <div class="position-details">
+                            <span class="detail"><i class="fas fa-map-marker-alt"></i> São Paulo</span>
+                            <span class="detail"><i class="fas fa-graduation-cap"></i> Superior</span>
+                        </div>
+                        
+                        <div class="salary-box">
+                            <div class="salary-label">Remuneração Inicial</div>
+                            <div class="salary-value">R$ 15.247,00</div>
+                        </div>
+
+                        <div class="vacancy-info">
+                            <div class="vacancy-count">
+                                <i class="fas fa-users"></i>
+                                <span>500 vagas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="deadline">
+                            <i class="fas fa-hourglass-half"></i>
+                            <div class="deadline-info">
+                                <span class="deadline-label">Inscrição até</span>
+                                <span class="deadline-date">12/03/2026</span>
+                            </div>
+                        </div>
+                        <button class="btn-details">Ver Detalhes</button>
+                    </div>
+                </article>
+            </div>
+
+            <div class="load-more">
+                <button class="btn-load-more">
+                    <span>Carregar mais concursos</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h3>Não perca nenhuma oportunidade</h3>
+                    <p>Receba alertas personalizados dos concursos que combinam com seu perfil</p>
+                </div>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Digite seu e-mail">
+                    <button type="submit" class="btn-subscribe">
+                        <span>Alertas Grátis</span>
+                        <i class="fas fa-bell"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-bolt"></i>
+                        <span>RAZGO</span>
+                    </div>
+                    <p>A plataforma líder em informações sobre concursos públicos no Brasil. Conectando candidatos às melhores oportunidades desde 2020.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Concursos</h4>
+                    <ul>
+                        <li><a href="#">Concursos Abertos</a></li>
+                        <li><a href="#">Previstos</a></li>
+                        <li><a href="#">Em Andamento</a></li>
+                        <li><a href="#">Encerrados</a></li>
+                        <li><a href="#">Por Estado</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Preparação</h4>
+                    <ul>
+                        <li><a href="#">Apostilas</a></li>
+                        <li><a href="#">Cursos Online</a></li>
+                        <li><a href="#">Simulados</a></li>
+                        <li><a href="#">Videoaulas</a></li>
+                        <li><a href="#">Mapas Mentais</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Institucional</h4>
+                    <ul>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Fale Conosco</a></li>
+                        <li><a href="#">Anuncie</a></li>
+                        <li><a href="#">Trabalhe Conosco</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 RAZGO. Todos os direitos reservados.</p>
+                <div class="payment-methods">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Site 100% seguro</span>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
