@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAZZ - Concurso Couto Magalhães 2026</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --mazz-blue: #001f3f;
+            --mazz-gold: #ffc107;
+            --mazz-dark: #00152b;
+            --mazz-gray: #6c757d;
+        }
+
+        body { 
+            padding-top: 85px; 
+            font-family: 'Inter', sans-serif; 
+            background-color: #f4f7f9;
+            color: var(--mazz-dark);
+        }
+
+        /* NAVBAR PREMIUM */
+        .navbar {
+            background: rgba(0, 31, 63, 0.98) !important;
+            backdrop-filter: blur(12px);
+            border-bottom: 4px solid var(--mazz-gold);
+            padding: 15px 0;
+        }
+
+        .navbar-brand { font-size: 1.8rem; font-weight: 800; color: white !important; }
+        .nav-link { color: rgba(255, 255, 255, 0.85) !important; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; margin: 0 10px; }
+        .nav-link:hover, .nav-link.active { color: var(--mazz-gold) !important; }
+
+        /* HEADER */
+        .page-header {
+            background: linear-gradient(135deg, #721c24 0%, #dc3545 100%);
+            color: white;
+            padding: 40px 0;
+            border-bottom: 5px solid var(--mazz-gold);
+        }
+
+        /* ESTILO DOS LINKS/CARDS */
+        .level-title {
+            background: var(--mazz-blue);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 800;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .list-group-item {
+            transition: 0.3s;
+            border-left: 5px solid transparent;
+            margin-bottom: 8px;
+            border-radius: 8px !important;
+        }
+
+        .list-group-item:hover {
+            transform: translateX(10px);
+            border-left: 5px solid var(--mazz-gold);
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        /* DESTAQUE INTERNO */
+        .item-destaque {
+            background-color: #fff9e6 !important;
+            border-left: 5px solid var(--mazz-gold) !important;
+            font-weight: 700;
+        }
+
+        .btn-buy {
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+
+        /* RODAPÉ MAZZ */
+        .mazz-footer {
+            background-color: #f9f9f9;
+            padding: 40px 0 20px;
+            border-top: 1px solid #ececec;
+            margin-top: auto;
+        }
+        .footer-copyright { color: var(--mazz-dark); font-weight: 700; }
+        .footer-divider { width: 50px; height: 2px; background: var(--mazz-gold); margin: 15px auto; }
+        .footer-dev { font-size: 0.8rem; color: var(--mazz-gray); }
+        .footer-dev a { color: #198754; text-decoration: none; font-weight: 700; }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">MAZZ</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cursos.html">Cursos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="academico.html">Academico</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="concursos.html">Concursos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="laudos.html">Laudos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre Nos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">COUTO MAGALHÃES 2026</h1>
+            <p class="lead opacity-75">Sua aprovação começa com o material certo.</p>
+        </div>
+    </header>
+
+    <main class="container mb-5 flex-grow-1">
+        
+        <div class="card border-0 shadow-lg mt-4 overflow-hidden">
+            <div class="row g-0">
+                <div class="col-md-8 bg-success text-white p-4 d-flex flex-column justify-content-center">
+                    <h2 class="fw-bold mb-0">✍️ MÓDULO DE REDAÇÃO</h2>
+                    <p class="mb-0 opacity-75">Domine a estrutura e os temas para o concurso de Couto Magalhães.</p>
+                </div>
+                <div class="col-md-4 bg-white p-4 d-flex align-items-center justify-content-center">
+                    <a href="https://mazz.herospark.co/redacao-concurso-2026-do-couto-magalhaes" target="_blank" class="btn btn-success btn-lg w-100 fw-bold">COMPRAR AGORA</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="level-title">🎓 Nível Superior</div>
+        <div class="list-group">
+            <a href="https://mazz.herospark.co/concurso-2026-do-couto-magalhaes-todos-os-cargos-de-nivel-superior-apostila-conhecimentos-basicos" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center item-destaque">
+                ⭐ Apostila Conhecimentos Básicos (Todos os Cargos Superior)
+                <span class="btn btn-warning btn-buy shadow-sm">Destaque</span>
+            </a>
+            
+            <a href="https://mazz.herospark.co/concurso-2026-do-couto-magalhaes-professor-de-nivel-superior-pedagogo-apostila-especifica" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Apostila Específica: Professor Pedagogo
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+            <a href="https://mazz.herospark.co/professor-de-historia-especifica-concurso-2026-do-couto-magalhaes" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Apostila Específica: Professor de História
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+            <a href="https://mazz.herospark.co/professor-de-artes-especifica-concurso-2026-do-couto-magalhaes" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Apostila Específica: Professor de Artes
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+            <a href="https://mazz.herospark.co/concurso-2026-do-couto-magalhaes-professor-de-pedagogia-simulado" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Simulado: Professor de Pedagogia
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+            <a href="https://mazz.herospark.co/concurso-2026-do-couto-magalhaes-professor-de-historia-simulado" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Simulado: Professor de História
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+            <a href="https://mazz.herospark.co/professor-de-matematica-simulado-concurso-2026-do-couto-magalhaes" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Simulado: Professor de Matemática
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+            <a href="https://mazz.herospark.co/professor-de-artes-simulado-concurso-2026-do-couto-magalhaes" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Simulado: Professor de Artes
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+            <a href="https://mazz.herospark.co/concurso-2026-do-couto-magalhaes-nivel-superior-psicologo-simulado" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Simulado: Psicólogo
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+            <a href="https://mazz.herospark.co/dentista-simulado-concurso-2026-do-couto-magalhaes" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Simulado: Dentista
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+            <a href="https://mazz.herospark.co/biomedico-simulado-concurso-2026-do-couto-magalhaes" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Simulado: Biomédico
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+            <a href="https://mazz.herospark.co/concurso-2026-do-couto-magalhaes-analista-administrativo-simulado" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Simulado: Analista Administrativo
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+            <a href="https://mazz.herospark.co/concurso-2026-do-couto-magalhaes-educador-fisico-da-saude-simulado" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Simulado: Educador Físico da Saúde
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+            <a href="https://mazz.herospark.co/concurso-2026-do-couto-magalhaes-assistente-social-simulado" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Simulado: Assistente Social
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+            <a href="https://mazz.herospark.co/concurso-2026-do-couto-magalhaes-enfermeiro-simulado" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Simulado: Enfermeiro
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+        </div>
+
+        <div class="level-title">📐 Nível Médio e Técnico</div>
+        <div class="list-group">
+            <a href="https://mazz.herospark.co/medio-todos-os-cargos-apostila-conhecimentos-basicos-concurso-2026-do-couto-magalhaes" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center item-destaque">
+                ⭐ Apostila Conhecimentos Básicos (Todos os Cargos Médio)
+                <span class="btn btn-warning btn-buy shadow-sm">Destaque</span>
+            </a>
+
+            <a href="https://mazz.herospark.co/medio-assistente-administrativo-especifico-concurso-2026-do-couto-magalhaes" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Apostila Específica: Assistente Administrativo
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+            <a href="https://mazz.herospark.co/medio-agente-de-apoio-educacional-especifico-concurso-2026-do-couto-magalhaes" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Apostila Específica: Agente de Apoio Educacional
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+            <a href="https://mazz.herospark.co/medio-tecnico-em-enfermagem-especifico-concurso-2026-do-couto-magalhaes" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Apostila Específica: Técnico em Enfermagem
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+            <a href="https://mazz.herospark.co/concurso-2026-do-couto-magalhaes-assistente-administrativo-simulado" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Simulado: Assistente Administrativo
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+            <a href="https://mazz.herospark.co/concurso-2026-do-couto-magalhaes-agente-de-apoio-educacional-smulado" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Simulado: Agente de Apoio Educacional
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+            <a href="https://mazz.herospark.co/concurso-2026-do-couto-magalhaes-tecnico-em-enfermagem-simulado" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Simulado: Técnico em Enfermagem
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+            <a href="https://mazz.herospark.co/concurso-2026-do-couto-magalhaes-tecnico-em-informatica-smulado" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Simulado: Técnico em Informática
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+            <a href="https://mazz.herospark.co/concurso-2026-do-couto-magalhaes-tecnico-em-higiene-dental-simulado" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Simulado: Técnico em Higiene Dental
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+            <a href="https://mazz.herospark.co/concurso-2026-do-couto-magalhaes-tecnico-agropecuario-simulado" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Simulado: Técnico Agropecuário
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+            <a href="https://mazz.herospark.co/concurso-2026-do-couto-magalhaes-fiscal-sanitario-simulado" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Simulado: Fiscal Sanitário
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+            <a href="https://mazz.herospark.co/concurso-2026-do-couto-magalhaes-fiscal-de-obras-postura-e-servicos-simulado" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Simulado: Fiscal de Obras, Postura e Serviços
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+            <a href="https://mazz.herospark.co/concurso-2026-do-couto-magalhaes-fiscal-ambiental-simulado" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Simulado: Fiscal Ambiental
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+        </div>
+
+        <div class="level-title">⚒️ Nível Fundamental</div>
+        <div class="list-group">
+            <a href="https://mazz.herospark.co/concurso-2026-do-couto-magalhaes-auxiliar-de-servicos-gerais-gari-merendeira-motorista-apostila-100-exercicios-de-fixacao" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Apostila completa (ASG, Gari, Merendeira, Motorista)
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+            <a href="https://mazz.herospark.co/concurso-2026-do-couto-magalhaes-auxiliar-de-servicos-gerais-gari-merendeira-motorista-categoria-vigia" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Simulado (ASG, Gari, Merendeira, Motorista)
+                <span class="btn btn-primary btn-buy">Abrir</span>
+            </a>
+        </div>
+
+    </main>
+
+    <footer class="mazz-footer text-center">
+        <div class="container">
+            <div class="footer-copyright">
+                &copy; 2026 MAZZ. Todos os direitos reservados. Goiânia - GO.
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-dev">
+                Desenvolvido por: <a href="https://www.kmprojetos.eng.br/" target="_blank">KM Engenharia & Tecnologia</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

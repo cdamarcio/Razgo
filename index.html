@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAZZ - Engenharia, Educação & Tecnologia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --mazz-blue: #001f3f;
+            --mazz-gold: #ffc107;
+            --mazz-dark: #00152b;
+            --mazz-gray: #6c757d;
+            --mazz-light: #f8f9fa;
+        }
+
+        body { padding-top: 85px; font-family: 'Inter', sans-serif; background-color: #ffffff; color: var(--mazz-dark); overflow-x: hidden; }
+
+        /* NAVBAR */
+        .navbar { background: rgba(0, 31, 63, 0.98) !important; backdrop-filter: blur(12px); border-bottom: 4px solid var(--mazz-gold); padding: 15px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+        .navbar-brand { font-size: 1.8rem; font-weight: 800; letter-spacing: 2px; color: white !important; }
+        .nav-link { color: rgba(255, 255, 255, 0.85) !important; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; margin: 0 10px; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: var(--mazz-gold) !important; }
+
+        /* HERO */
+        .hero-section { background: linear-gradient(135deg, var(--mazz-blue) 0%, var(--mazz-dark) 100%); color: white; padding: 100px 0; position: relative; }
+        .hero-title { font-weight: 800; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; margin-bottom: 20px; }
+
+        /* CARDS SERVIÇOS */
+        .feature-card { border: 1px solid #eee; border-radius: 20px; transition: 0.4s; background: #fff; padding: 30px; height: 100%; display: flex; flex-direction: column; text-align: center; }
+        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--mazz-gold); }
+
+        /* DEPOIMENTOS */
+        .testimonials-section { background-color: var(--mazz-light); padding: 80px 0; }
+        .testimonial-item { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); height: 100%; border-top: 4px solid transparent; transition: 0.3s; }
+        .testimonial-item:hover { border-top: 4px solid var(--mazz-gold); }
+        .testimonial-text { font-size: 0.9rem; font-style: italic; color: var(--mazz-gray); margin-bottom: 15px; }
+        .user-info img { width: 45px; height: 45px; border-radius: 50%; margin-right: 12px; border: 2px solid var(--mazz-gold); }
+        .user-name { font-weight: 800; font-size: 0.9rem; color: var(--mazz-blue); margin: 0; }
+        .user-role { font-size: 0.75rem; color: var(--mazz-gold); margin: 0; font-weight: 600; }
+
+        /* FOOTER */
+        .mazz-footer { background-color: #f9f9f9; padding: 40px 0 20px; border-top: 1px solid #ececec; margin-top: auto; text-align: center; }
+        .footer-copyright { font-weight: 700; color: var(--mazz-dark); }
+        .footer-divider { width: 50px; height: 2px; background: var(--mazz-gold); margin: 15px auto; }
+        .footer-dev { font-size: 0.8rem; color: var(--mazz-gray); }
+        .footer-dev a { color: #198754; text-decoration: none; font-weight: 700; }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">MAZZ</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-center">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cursos.html">Cursos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="academico.html">Academico</a></li>
+                    <li class="nav-item"><a class="nav-link" href="concursos.html">Concursos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="laudos.html">Laudos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre Nos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section text-center">
+        <div class="container">
+            <h1 class="hero-title">ENGENHARIA, EDUCAÇÃO<br>& TECNOLOGIA</h1>
+            <p class="lead mb-5 opacity-75">Soluções multidisciplinares com rigor técnico e atuação nacional.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="cursos.html" class="btn btn-warning btn-lg fw-bold px-4">VER CURSOS</a>
+                <a href="laudos.html" class="btn btn-outline-light btn-lg fw-bold px-4">LAUDOS TÉCNICOS</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="container my-5 py-4">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h3 class="fw-bold h4">Educação</h3>
+                    <p class="text-muted small">Cursos e NRs com certificação profissional para empresas e indivíduos.</p>
+                    <a href="cursos.html" class="btn btn-link text-primary fw-bold text-decoration-none mt-auto">Saber mais &rarr;</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h3 class="fw-bold h4">Engenharia</h3>
+                    <p class="text-muted small">Laudos, perícias e consultoria técnica em Civil, Ambiental e SST.</p>
+                    <a href="laudos.html" class="btn btn-link text-primary fw-bold text-decoration-none mt-auto">Saber mais &rarr;</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h3 class="fw-bold h4">Concursos</h3>
+                    <p class="text-muted small">Preparatórios de elite com foco em resultados e aprovação real.</p>
+                    <a href="concursos.html" class="btn btn-link text-primary fw-bold text-decoration-none mt-auto">Saber mais &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold" style="color: var(--mazz-blue);">O QUE DIZEM NOSSOS CLIENTES</h2>
+                <div class="footer-divider"></div>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Material da SEFA-PA excelente, focado e muito atualizado.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Ricardo+Souza&background=001f3f&color=fff"><div><p class="user-name">Ricardo Souza</p><p class="user-role">Concursos</p></div></div></div></div>
+                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Laudo de reforma entregue com agilidade e rigor técnico.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Ana+Paula&background=001f3f&color=fff"><div><p class="user-name">Ana Paula</p><p class="user-role">Engenharia</p></div></div></div></div>
+                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Consultoria no doutorado foi essencial para minha tese.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Felipe+Moraes&background=001f3f&color=fff"><div><p class="user-name">Felipe Moraes</p><p class="user-role">Acadêmico</p></div></div></div></div>
+                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Treinamento de NR-35 muito prático e profissional.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Marcos+Silva&background=001f3f&color=fff"><div><p class="user-name">Marcos Silva</p><p class="user-role">SST</p></div></div></div></div>
+                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Suporte para estágio EAD rápido e sem burocracia.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Juliana+Costa&background=001f3f&color=fff"><div><p class="user-name">Juliana Costa</p><p class="user-role">Estudante</p></div></div></div></div>
+                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Licenciamento ambiental resolvido com maestria pela MAZZ.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Carlos+Lima&background=001f3f&color=fff"><div><p class="user-name">Carlos Lima</p><p class="user-role">Ambiental</p></div></div></div></div>
+                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Didática do curso de Python voltada para o mercado real.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Lucas+Oliveira&background=001f3f&color=fff"><div><p class="user-name">Lucas Oliveira</p><p class="user-role">Tecnologia</p></div></div></div></div>
+                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Vistoria cautelar detalhada, nos deu segurança jurídica.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Beatriz+Melo&background=001f3f&color=fff"><div><p class="user-name">Beatriz Melo</p><p class="user-role">Construtora</p></div></div></div></div>
+                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Aprovado no TCC com nota máxima. Obrigado MAZZ!</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Andre+Santos&background=001f3f&color=fff"><div><p class="user-name">André Santos</p><p class="user-role">Técnico</p></div></div></div></div>
+                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">O sistema de gestão superou nossas expectativas de TI.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Patricia+Lopes&background=001f3f&color=fff"><div><p class="user-name">Patrícia Lopes</p><p class="user-role">Empresária</p></div></div></div></div>
+                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Videoaulas para o SEDUC-PA são as melhores do mercado.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Fernanda+Rocha&background=001f3f&color=fff"><div><p class="user-name">Fernanda Rocha</p><p class="user-role">Educação</p></div></div></div></div>
+                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Consultoria em SST fundamental para nossa adequação.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Gustavo+Xavier&background=001f3f&color=fff"><div><p class="user-name">Gustavo Xavier</p><p class="user-role">Indústria</p></div></div></div></div>
+                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Atendimento nacional com excelência. Recomendo sempre.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Renato+Gomes&background=001f3f&color=fff"><div><p class="user-name">Renato Gomes</p><p class="user-role">Consultor</p></div></div></div></div>
+                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Formatação ABNT perfeita e suporte acadêmico constante.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Camila+Vilela&background=001f3f&color=fff"><div><p class="user-name">Camila Vilela</p><p class="user-role">Acadêmico</p></div></div></div></div>
+                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Treinamentos práticos que realmente engajam a equipe.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Roberto+Alves&background=001f3f&color=fff"><div><p class="user-name">Roberto Alves</p><p class="user-role">SST</p></div></div></div></div>
+                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Análise de dados no mestrado impecável. Muito grata.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Sandra+Brito&background=001f3f&color=fff"><div><p class="user-name">Sandra Brito</p><p class="user-role">Mestrado</p></div></div></div></div>
+                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">Plataforma de cursos intuitiva e suporte nota 10.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Tiago+Mendes&background=001f3f&color=fff"><div><p class="user-name">Tiago Mendes</p><p class="user-role">Eletricista</p></div></div></div></div>
+                <div class="col-md-6 col-lg-4"><div class="testimonial-item"><p class="testimonial-text">O laudo para nosso condomínio foi vital para a reforma.</p><div class="user-info d-flex align-items-center"><img src="https://ui-avatars.com/api/?name=Daniela+Ferraz&background=001f3f&color=fff"><div><p class="user-name">Daniela Ferraz</p><p class="user-role">Síndica</p></div></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="mazz-footer">
+        <div class="container">
+            <div class="footer-copyright">&copy; 2026 MAZZ. Todos os direitos reservados. Goiânia - GO.</div>
+            <div class="footer-divider"></div>
+            <div class="footer-dev">Desenvolvido por: <a href="https://www.kmprojetos.eng.br/" target="_blank">KM Engenharia & Tecnologia</a></div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - MAZZ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --mazz-blue: #001f3f;
+            --mazz-gold: #ffc107;
+            --mazz-dark: #00152b;
+            --mazz-gray: #6c757d;
+            --mazz-light: #f8f9fa;
+        }
+
+        body { 
+            padding-top: 85px; 
+            font-family: 'Inter', sans-serif; 
+            background-color: #ffffff;
+            color: var(--mazz-dark);
+            line-height: 1.6;
+        }
+
+        /* NAVBAR PREMIUM */
+        .navbar {
+            background: rgba(0, 31, 63, 0.98) !important;
+            backdrop-filter: blur(12px);
+            border-bottom: 4px solid var(--mazz-gold);
+            padding: 15px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .navbar-brand { font-size: 1.8rem; font-weight: 800; letter-spacing: 2px; color: white !important; }
+        .nav-link { color: rgba(255, 255, 255, 0.85) !important; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; margin: 0 10px; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: var(--mazz-gold) !important; }
+
+        /* HEADER */
+        .page-header {
+            background: linear-gradient(135deg, var(--mazz-blue) 0%, var(--mazz-dark) 100%);
+            color: white;
+            padding: 80px 0;
+            margin-bottom: 50px;
+            border-bottom: 5px solid var(--mazz-gold);
+        }
+
+        .section-title {
+            font-weight: 800;
+            color: var(--mazz-blue);
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .highlight-box {
+            background-color: var(--mazz-light);
+            border-left: 5px solid var(--mazz-gold);
+            padding: 30px;
+            border-radius: 0 15px 15px 0;
+            margin-bottom: 40px;
+        }
+
+        .service-mini-card {
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 12px;
+            height: 100%;
+            transition: 0.3s;
+        }
+
+        .service-mini-card:hover {
+            border-color: var(--mazz-gold);
+            background-color: #f9f9f9;
+        }
+
+        /* RODAPÉ MAZZ PADRÃO */
+        .mazz-footer {
+            background-color: #f9f9f9;
+            padding: 40px 0 20px;
+            border-top: 1px solid #ececec;
+            margin-top: auto;
+        }
+        .footer-copyright { color: var(--mazz-dark); font-weight: 700; font-size: 1rem; }
+        .footer-divider { width: 50px; height: 2px; background: var(--mazz-gold); margin: 15px auto; }
+        .footer-dev { font-size: 0.8rem; color: var(--mazz-gray); }
+        .footer-dev a { color: #198754; text-decoration: none; font-weight: 700; }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">MAZZ</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cursos.html">Cursos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="academico.html">Academico</a></li>
+                    <li class="nav-item"><a class="nav-link" href="concursos.html">Concursos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="laudos.html">Laudos</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="sobre.html">Sobre Nos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">NOSSA HISTÓRIA</h1>
+            <p class="lead opacity-75">Estratégia, Responsabilidade e Excelência Técnica desde 2025.</p>
+        </div>
+    </header>
+
+    <main class="container mb-5 flex-grow-1 text-start">
+        <div class="row">
+            <div class="col-lg-8">
+                <h2 class="section-title">Excelência Técnica, Compromisso e Inovação</h2>
+                <p>Fundada em <strong>2025</strong>, no coração de <strong>Goiânia – GO</strong>, a <strong>MAZZ</strong> nasceu com a missão de elevar o padrão de entregas em setores estratégicos da economia e do desenvolvimento profissional. Operamos como uma consultoria multidisciplinar de alta performance, onde o rigor da engenharia se funde à agilidade da tecnologia e à profundidade do conhecimento educacional.</p>
+                
+                <div class="highlight-box shadow-sm">
+                    <p class="mb-0">Nossa atuação é pautada por três pilares inegociáveis: <strong>Rigor Normativo</strong>, <strong>Resultados Mensuráveis</strong> e <strong>Ética Profissional</strong>.</p>
+                </div>
+
+                <h3 class="fw-bold mt-5 mb-3">Nossas Divisões</h3>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="service-mini-card">
+                            <h5 class="fw-bold text-primary">Engenharia Diagnóstica</h5>
+                            <p class="small text-muted">Perícias judiciais, laudos de reforma e vistorias técnicas com conformidade absoluta às NRs.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-mini-card">
+                            <h5 class="fw-bold text-primary">Educação e Concursos</h5>
+                            <p class="small text-muted">Capacitação profissional e materiais de elite focados em carreiras fiscais e educacionais.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-mini-card">
+                            <h5 class="fw-bold text-primary">Inovação e Tecnologia</h5>
+                            <p class="small text-muted">Modernização de processos e soluções digitais focadas em eficiência operacional.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-mini-card">
+                            <h5 class="fw-bold text-primary">Consultoria Acadêmica</h5>
+                            <p class="small text-muted">Mentoria especializada para TCCs e pesquisas, transformando conhecimento em impacto real.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5 mb-5">
+                    <h3 class="fw-bold">Por que a MAZZ?</h3>
+                    <p>Escolher a MAZZ é optar por uma parceria estratégica que entende as nuances do mercado goiano e as exigências do cenário nacional. Seja no canteiro de obras, na sala de aula ou no ambiente digital, nossa marca é o selo de qualidade que sua trajetória ou sua empresa merece.</p>
+                    <p class="fw-bold text-primary">MAZZ — Estratégia, Responsabilidade e Excelência.</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="p-4 bg-light rounded-4 sticky-top" style="top: 110px;">
+                    <h5 class="fw-bold mb-3">Informações Gerais</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><strong>📍 Sede:</strong> Goiânia - GO</li>
+                        <li class="mb-2"><strong>📅 Fundação:</strong> 2025</li>
+                        <li class="mb-2"><strong>✅ Especialidade:</strong> Consultoria Multidisciplinar</li>
+                        <li><strong>📞 Contacto:</strong> <a href="https://wa.me/5562996466033" class="text-decoration-none">Ver WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mazz-footer text-center">
+        <div class="container">
+            <div class="footer-copyright">
+                &copy; 2026 MAZZ. Todos os direitos reservados. Goiânia - GO.
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-dev">
+                Desenvolvido por: <a href="https://www.kmprojetos.eng.br/" target="_blank">KM Engenharia & Tecnologia</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
