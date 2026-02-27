@@ -10,30 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <link rel="stylesheet" href="style.css">
-    
-    <style>
-        /* CSS Embutido para garantir o destaque do botão de materiais */
-        .nav-link { cursor: pointer; }
-        .btn-compra { 
-            background-color: #ffc107; 
-            color: #212529 !important; 
-            font-weight: bold; 
-            border-radius: 50px;
-            padding: 5px 20px !important;
-            transition: all 0.3s;
-        }
-        .btn-compra:hover { 
-            background-color: #ffcd39; 
-            transform: scale(1.05);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        .hero-section {
-            background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
-            padding: 60px 0;
-        }
-    </style>
 </head>
-<body class="bg-light">
+<body class="bg-light d-flex flex-column min-vh-100">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
         <div class="container">
@@ -52,7 +30,7 @@
                     <li class="nav-item"><a class="nav-link" onclick="mudarAba('go')">GO</a></li>
                     <li class="nav-item"><a class="nav-link" onclick="mudarAba('ma')">MA</a></li>
                     <li class="nav-item ms-lg-3">
-                        <a class="nav-link btn-compra" onclick="mudarAba('materiais')">
+                        <a class="nav-link btn-compra px-3" onclick="mudarAba('materiais')">
                             <i class="fas fa-shopping-cart me-1"></i> COMPRAR MATERIAIS
                         </a>
                     </li>
@@ -68,7 +46,7 @@
         </div>
     </header>
 
-    <main class="container my-5">
+    <main class="container my-5 flex-grow-1">
         <div class="card shadow border-0">
             <div class="card-body p-0">
                 <div class="table-responsive">
@@ -90,10 +68,13 @@
         </div>
     </main>
 
-    <footer class="bg-dark text-white text-center py-4 mt-auto">
-        <div class="container">
-            <p class="mb-1 fw-bold">RAZGO CONCURSOS &copy; 2026</p>
-            <p class="small text-muted mb-0">Desenvolvido por: KM Engenharia & Tecnologia</p>
+    <footer class="mazz-footer">
+        <div class="container text-center">
+            <div class="footer-copyright">&copy; 2026 RAZGO. Todos os direitos reservados. Goiânia - GO.</div>
+            <div class="footer-divider"></div>
+            <div class="footer-dev">
+                Desenvolvido por: <a href="https://www.kmprojetos.eng.br/" target="_blank">KM Engenharia & Tecnologia</a>
+            </div>
         </div>
     </footer>
 
