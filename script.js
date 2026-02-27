@@ -1,229 +1,101 @@
-// Loader
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        document.querySelector('.loader').classList.add('hidden');
-    }, 1500);
-});
+// Banco de Dados do Portal RAZGO 2026
+const bancoDados = {
+    inicio: [
+        { nome: "SEFA PA", info: "Auditor e Fiscal (Nível Superior)", valor: "R$ 16.659", status: "Aberto", cor: "danger", link: "#" },
+        { nome: "IBGE", info: "39.108 Vagas Temporárias", valor: "Até R$ 6.100", status: "Previsto", cor: "warning text-dark", link: "#" },
+        { nome: "SEFAZ-TO", info: "Auditor Fiscal e Técnico", valor: "R$ 18.500", status: "Autorizado", cor: "info", link: "#" }
+    ],
+    federal: [
+        { nome: "Banco do Brasil", info: "Escriturário e TI", valor: "R$ 5.400+", status: "Estudo", cor: "secondary", link: "#" },
+        { nome: "DNIT", info: "Engenheiro Civil e Analista", valor: "R$ 15.200", status: "Previsto", cor: "warning text-dark", link: "#" },
+        { nome: "INSS", info: "Técnico (Médio) e Analista", valor: "R$ 9.120", status: "Solicitado", cor: "secondary", link: "#" },
+        { nome: "Petrobras", info: "Engenharia e Nível Técnico", valor: "R$ 13.000", status: "Previsto", cor: "info", link: "#" }
+    ],
+    pa: [
+        { nome: "SEFA PA", info: "Diversos Cargos / Eng. Civil", valor: "R$ 16.659", status: "Aberto", cor: "danger", link: "#" },
+        { nome: "Polícia Científica PA", info: "Perito Criminal", valor: "R$ 12.954", status: "Comissão", cor: "info", link: "#" },
+        { nome: "Prefeitura de Redenção", info: "1.021 Vagas - Vários Níveis", valor: "Até R$ 8.500", status: "Licitação", cor: "warning text-dark", link: "#" },
+        { nome: "Prefeitura de Juruti", info: "Saúde, Ed. e Adm", valor: "Diversos", status: "Aberto", cor: "danger", link: "#" }
+    ],
+    to: [
+        { nome: "SEFAZ-TO", info: "Auditor da Receita Estadual", valor: "R$ 18.500", status: "Autorizado", cor: "info", link: "#" },
+        { nome: "SES-TO (Saúde)", info: "Médicos, Enf. e Administrativo", valor: "Até R$ 12.000", status: "Anunciado", cor: "warning text-dark", link: "#" },
+        { nome: "Pref. Couto Magalhães", info: "Saúde e Administrativo", valor: "Vários", status: "Comissão", cor: "secondary", link: "#" },
+        { nome: "Câmara de Palmas", info: "Analista e Técnico", valor: "R$ 5.600", status: "Aberto", cor: "danger", link: "#" }
+    ],
+    go: [
+        { nome: "SEFAZ-GO", info: "Auditor Fiscal", valor: "R$ 28.563", status: "Aberto", cor: "danger", link: "#" },
+        { nome: "PM-GO", info: "Soldado e Oficial", valor: "Até R$ 13.900", status: "Previsto", link: "#", cor: "info" },
+        { nome: "Câmara de Goiânia", info: "Analista e Guarda Legislativo", valor: "R$ 10.000", status: "Aberto", cor: "danger", link: "#" }
+    ],
+    ma: [
+        { nome: "TCE-MA", info: "Analista de Controle Externo", valor: "R$ 17.000", status: "Comissão", cor: "info", link: "#" },
+        { nome: "Polícia Penal MA", info: "Especialista e Agente", valor: "R$ 5.172", status: "Autorizado", cor: "warning text-dark", link: "#" },
+        { nome: "SEDUC-MA", info: "Professor e Área Técnica", valor: "A definir", status: "Anunciado", cor: "info", link: "#" }
+    ],
+    materiais: [
+        { nome: "Combo Eng. Civil 2026", info: "Materiais p/ DNIT e SEFA-PA", valor: "R$ 97,00", status: "PDF", cor: "success", link: "https://wa.me/SEUNUMERO?text=Quero+Combo+Engenharia" },
+        { nome: "Curso NR-10 e NR-35", info: "Certificado + Apostila (MR Treinamentos)", valor: "R$ 150,00", status: "Completo", cor: "success", link: "https://wa.me/SEUNUMERO?text=Quero+Cursos+NR" },
+        { nome: "Simulados SEFAZ-TO", info: "Questões comentadas Auditor", valor: "R$ 47,00", status: "Ebook", cor: "success", link: "https://wa.me/SEUNUMERO?text=Quero+Simulados+TO" },
+        { nome: "Guia Pref. Couto Magalhães", info: "Conhecimentos locais e gerais", valor: "R$ 35,00", status: "PDF", cor: "success", link: "https://wa.me/SEUNUMERO?text=Quero+Guia+Couto" }
+    ]
+};
 
-// Navbar scroll effect
-const navbar = document.querySelector('.navbar');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+function mudarAba(categoria) {
+    const tabela = document.getElementById('tabela-corpo');
+    const titulo = document.getElementById('titulo-pagina');
+    const subtitulo = document.getElementById('subtitulo-pagina');
+    
+    // Limpa a tabela
+    tabela.innerHTML = "";
+
+    // Configura os textos do Header
+    const titulosMap = {
+        inicio: "Principais Oportunidades",
+        federal: "Concursos Federais",
+        pa: "Estado do Pará",
+        to: "Estado do Tocantins",
+        go: "Estado de Goiás",
+        ma: "Estado do Maranhão",
+        materiais: "Loja de Materiais Razgo"
+    };
+
+    const subtitulosMap = {
+        materiais: "Acelere sua aprovação com nossos materiais exclusivos.",
+        inicio: "Confira os editais mais quentes para este mês."
+    };
+
+    titulo.innerText = titulosMap[categoria] || "Concursos 2026";
+    subtitulo.innerText = subtitulosMap[categoria] || "Acompanhe editais abertos e previstos para sua região.";
+
+    // Preenche a tabela com os dados da categoria
+    bancoDados[categoria].forEach(item => {
+        const textoBotao = categoria === 'materiais' ? 'ADQUIRIR' : 'VER EDITAL';
+        const iconeBotao = categoria === 'materiais' ? 'fas fa-cart-plus' : 'fas fa-external-link-alt';
+
+        tabela.innerHTML += `
+            <tr>
+                <td class="ps-4">
+                    <div class="fw-bold text-dark">${item.nome}</div>
+                </td>
+                <td><small class="text-muted">${item.info}</small></td>
+                <td><span class="text-primary fw-bold">${item.valor}</span></td>
+                <td><span class="badge bg-${item.cor}">${item.status}</span></td>
+                <td class="text-center">
+                    <a href="${item.link}" target="_blank" class="btn ${categoria === 'materiais' ? 'btn-success' : 'btn-dark'} btn-sm px-3 shadow-sm">
+                        <i class="${iconeBotao} me-1"></i> ${textoBotao}
+                    </a>
+                </td>
+            </tr>
+        `;
+    });
+
+    // Fecha o menu hambúrguer no mobile após clicar
+    const navbarCollapse = document.getElementById('navbarNav');
+    if (navbarCollapse.classList.contains('show')) {
+        new bootstrap.Collapse(navbarCollapse).toggle();
     }
-});
-
-// Counter animation
-const counters = document.querySelectorAll('.stat-number');
-const speed = 200;
-
-const animateCounters = () => {
-    counters.forEach(counter => {
-        const target = parseFloat(counter.getAttribute('data-count'));
-        const isDecimal = target % 1 !== 0;
-        const increment = target / speed;
-        
-        const updateCount = () => {
-            const count = parseFloat(counter.innerText);
-            
-            if (count < target) {
-                const newCount = count + increment;
-                counter.innerText = isDecimal ? newCount.toFixed(1) : Math.ceil(newCount);
-                setTimeout(updateCount, 10);
-            } else {
-                counter.innerText = isDecimal ? target.toFixed(1) : target;
-                if (target === 2.5) counter.innerText += 'M';
-            }
-        };
-        
-        updateCount();
-    });
-};
-
-// Intersection Observer for counters
-const observerOptions = {
-    threshold: 0.5
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateCounters();
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-const statsSection = document.querySelector('.hero-stats');
-if (statsSection) {
-    observer.observe(statsSection);
 }
 
-// Filter functionality
-const filterBtns = document.querySelectorAll('.filter-btn');
-const contestCards = document.querySelectorAll('.contest-card');
-
-filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        // Remove active class from all buttons
-        filterBtns.forEach(b => b.classList.remove('active'));
-        // Add active class to clicked button
-        btn.classList.add('active');
-        
-        const filter = btn.getAttribute('data-filter');
-        
-        contestCards.forEach(card => {
-            if (filter === 'all') {
-                card.classList.remove('hidden');
-                card.style.animation = 'fadeInUp 0.5s ease forwards';
-            } else {
-                const categories = card.getAttribute('data-category');
-                if (categories && categories.includes(filter)) {
-                    card.classList.remove('hidden');
-                    card.style.animation = 'fadeInUp 0.5s ease forwards';
-                } else {
-                    card.classList.add('hidden');
-                }
-            }
-        });
-    });
-});
-
-// View toggle (grid/list)
-const viewBtns = document.querySelectorAll('.view-btn');
-const contestsContainer = document.getElementById('contestsContainer');
-
-viewBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        viewBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        
-        const view = btn.getAttribute('data-view');
-        if (view === 'list') {
-            contestsContainer.classList.add('list-view');
-        } else {
-            contestsContainer.classList.remove('list-view');
-        }
-    });
-});
-
-// Favorite button toggle
-const favoriteBtns = document.querySelectorAll('.btn-favorite');
-
-favoriteBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const icon = btn.querySelector('i');
-        
-        if (icon.classList.contains('far')) {
-            icon.classList.remove('far');
-            icon.classList.add('fas');
-            btn.style.background = 'rgba(236, 72, 153, 0.2)';
-            btn.style.color = '#ec4899';
-        } else {
-            icon.classList.remove('fas');
-            icon.classList.add('far');
-            btn.style.background = 'rgba(255, 255, 255, 0.05)';
-            btn.style.color = '#94a3b8';
-        }
-    });
-});
-
-// Smooth scroll for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-            
-            // Update active nav link
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('active');
-            });
-            
-            if (this.classList.contains('nav-link')) {
-                this.classList.add('active');
-            }
-        }
-    });
-});
-
-// Newsletter form
-const newsletterForm = document.querySelector('.newsletter-form');
-
-newsletterForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = newsletterForm.querySelector('input').value;
-    
-    if (email) {
-        // Show success message
-        const btn = newsletterForm.querySelector('button');
-        const originalText = btn.innerHTML;
-        
-        btn.innerHTML = '<i class="fas fa-check"></i> Inscrito!';
-        btn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
-        
-        setTimeout(() => {
-            btn.innerHTML = originalText;
-            btn.style.background = '';
-            newsletterForm.reset();
-        }, 3000);
-    }
-});
-
-// Parallax effect for orbs
-document.addEventListener('mousemove', (e) => {
-    const orbs = document.querySelectorAll('.gradient-orb');
-    const x = e.clientX / window.innerWidth;
-    const y = e.clientY / window.innerHeight;
-    
-    orbs.forEach((orb, index) => {
-        const speed = (index + 1) * 20;
-        const xOffset = (window.innerWidth / 2 - e.clientX) / speed;
-        const yOffset = (window.innerHeight / 2 - e.clientY) / speed;
-        
-        orb.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
-    });
-});
-
-// Load more functionality
-const loadMoreBtn = document.querySelector('.btn-load-more');
-
-loadMoreBtn.addEventListener('click', () => {
-    loadMoreBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Carregando...';
-    
-    // Simulate loading more content
-    setTimeout(() => {
-        loadMoreBtn.innerHTML = '<span>Não há mais concursos</span><i class="fas fa-check"></i>';
-        loadMoreBtn.disabled = true;
-        loadMoreBtn.style.opacity = '0.6';
-        loadMoreBtn.style.cursor = 'not-allowed';
-    }, 1500);
-});
-
-// Intersection Observer for scroll animations
-const scrollObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-});
-
-// Observe all cards
-document.querySelectorAll('.contest-card').forEach((card, index) => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-    scrollObserver.observe(card);
-});
+// Inicia na aba principal
+window.onload = () => mudarAba('inicio');
