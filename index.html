@@ -3,91 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAZGO | Digital Product Studio</title>
+    <title>RAZGO | Engenharia de Software</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="logo">RAZGO<span>_</span></div>
-        <div class="nav-menu">
-            <a href="#portfolio">Projetos</a>
-            <a href="#servicos">Expertise</a>
-            <a href="https://wa.me/seu-numero" class="btn-cta">Iniciar Projeto</a>
+        <div class="logo">RAZGO<span>.</span></div>
+        <div class="nav-links">
+            <a href="#home">Início</a>
+            <a href="#portfolio">Clientes</a>
+            <a href="#servicos">Serviços</a>
+            <a href="https://wa.me/seu-numero" class="btn-contato">Solicitar Orçamento</a>
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="hero-container">
-            <div class="hero-text">
-                <span class="tagline">Disruptive Development</span>
-                <h1>Transformamos ideias brutas em <span>Software de Elite.</span></h1>
-                <p>Desenvolvimento focado em escalabilidade para startups e grandes corporações. Sites, Web Apps e Mobile de alta performance.</p>
-                <div class="stats">
-                    <div><strong>+50</strong><span>Projetos</span></div>
-                    <div><strong>100%</strong><span>Cloud Native</span></div>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Dashboard Preview">
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>Sistemas que impulsionam <span>grandes negócios.</span></h1>
+            <p>Especialistas em desenvolvimento de alta performance: de Landing Pages a Sistemas Web complexos e Aplicativos nativos.</p>
+            <div class="hero-actions">
+                <a href="#portfolio" class="btn-main">Ver Portfólio</a>
+                <a href="#servicos" class="btn-link">O que fazemos →</a>
             </div>
         </div>
     </header>
 
     <section id="portfolio" class="portfolio">
-        <div class="section-header">
-            <h2>Nossos Cases</h2>
-            <p>Sistemas robustos que rodam o mundo real.</p>
-        </div>
-
-        <div class="grid-portfolio">
-            <div class="card-case">
-                <div class="case-img">
-                    <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&w=700&q=80" alt="SaaS Saúde">
-                </div>
-                <div class="case-content">
-                    <span class="category">Healthcare / SaaS</span>
-                    <h3>BioPulse Dashboard</h3>
-                    <p>Telemedicina com análise de dados em tempo real para hospitais.</p>
-                </div>
+        <div class="container">
+            <div class="section-info">
+                <span class="subtitle">Portfólio</span>
+                <h2>Nossos Clientes e Projetos</h2>
             </div>
 
-            <div class="card-case">
-                <div class="case-img">
-                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=700&q=80" alt="Agro App">
+            <div class="portfolio-grid">
+                <div class="item">
+                    <div class="item-img">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=800&auto=format&fit=crop" alt="Landing Page">
+                        <span class="label">Página Web / Site</span>
+                    </div>
+                    <div class="item-text">
+                        <h3>Institucional Premium</h3>
+                        <p>Landing pages focadas em conversão e SEO para empresas de serviço.</p>
+                    </div>
                 </div>
-                <div class="case-content">
-                    <span class="category">AgroTech / Mobile</span>
-                    <h3>TerraVision App</h3>
-                    <p>Controle de safra via satélite integrado com sensores IoT de campo.</p>
-                </div>
-            </div>
 
-            <div class="card-case">
-                <div class="case-img">
-                    <img src="https://images.unsplash.com/photo-1518186239717-2e9b1367362f?auto=format&fit=crop&w=700&q=80" alt="Financeiro">
+                <div class="item">
+                    <div class="item-img">
+                        <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=800&auto=format&fit=crop" alt="Sistema Web">
+                        <span class="label">Sistema Web (ERP/CRM)</span>
+                    </div>
+                    <div class="item-text">
+                        <h3>MazzSys Gestão</h3>
+                        <p>Plataforma web para controle administrativo, financeiro e nota fiscal.</p>
+                    </div>
                 </div>
-                <div class="case-content">
-                    <span class="category">Fintech / Web</span>
-                    <h3>MazzPay Global</h3>
-                    <p>Gateway de pagamentos focado em conformidade fiscal e segurança.</p>
+
+                <div class="item">
+                    <div class="item-img">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=800&auto=format&fit=crop" alt="App Mobile">
+                        <span class="label">App Mobile</span>
+                    </div>
+                    <div class="item-text">
+                        <h3>RAZGO Mobile</h3>
+                        <p>Aplicativos iOS e Android integrados com nuvem e notificações real-time.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-info">
-                <div class="logo">RAZGO<span>_</span></div>
-                <p>Engenharia de software com DNA brasileiro para o mercado global.</p>
-            </div>
-            <div class="footer-contact">
-                <p>Goiânia, GO - Brasil</p>
-                <p>contato@razgo.com.br</p>
-            </div>
+    <footer id="servicos">
+        <div class="footer-top">
+            <h2>Pronto para tirar sua ideia do papel?</h2>
+            <p>Atendemos de pequenas empresas a grandes corporações.</p>
+            <a href="#" class="btn-main">Falar com um Especialista</a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 RAZGO Soluções Digitais. Goiânia - GO.</p>
         </div>
     </footer>
 

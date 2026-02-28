@@ -1,21 +1,31 @@
 lucide.createIcons();
 
-// Revelação Suave dos Cards
+// Smooth Scroll para os links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Efeito de revelação ao rolar
 const reveal = () => {
-    const cards = document.querySelectorAll('.card-case');
-    cards.forEach(card => {
-        const cardTop = card.getBoundingClientRect().top;
-        if (cardTop < window.innerHeight - 100) {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
+    const items = document.querySelectorAll('.item');
+    items.forEach(item => {
+        const top = item.getBoundingClientRect().top;
+        if (top < window.innerHeight - 50) {
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
         }
     });
 };
 
 window.addEventListener('scroll', reveal);
-// Inicializa os cards invisíveis para o efeito
-document.querySelectorAll('.card-case').forEach(c => {
-    c.style.opacity = '0';
-    c.style.transform = 'translateY(40px)';
-    c.style.transition = 'all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)';
+// Setup inicial para animação
+document.querySelectorAll('.item').forEach(i => {
+    i.style.opacity = '0';
+    i.style.transform = 'translateY(30px)';
+    i.style.transition = 'all 0.6s ease-out';
 });
