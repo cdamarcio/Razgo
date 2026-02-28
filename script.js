@@ -1,28 +1,17 @@
+// Inicializa ícones
 lucide.createIcons();
 
-// Revelação suave ao scroll
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        }
-    });
-});
-
-document.querySelectorAll('.card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'all 0.6s ease-out';
-    observer.observe(card);
-});
-
-// Adiciona classe de animação
-window.addEventListener('scroll', () => {
-    document.querySelectorAll('.card').forEach(card => {
-        const top = card.getBoundingClientRect().top;
-        if (top < window.innerHeight - 100) {
+// Animação suave ao carregar
+window.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.5s ease-out';
+        
+        setTimeout(() => {
             card.style.opacity = '1';
             card.style.transform = 'translateY(0)';
-        }
+        }, index * 50); // Efeito cascata
     });
 });
