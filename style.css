@@ -29,7 +29,7 @@ body { background: var(--bg); color: var(--text); line-height: 1.6; }
 .hero h1 span { color: var(--primary); }
 .hero p { font-size: 1.25rem; color: #64748b; max-width: 700px; margin: 0 auto; }
 
-/* Portfolio Grid */
+/* Portfolio */
 .main-container { padding: 40px 8%; }
 .section { margin-bottom: 100px; }
 .section-header h2 { display: flex; align-items: center; gap: 12px; font-size: 2.2rem; color: var(--dark); font-weight: 800; margin-bottom: 8px; }
@@ -39,15 +39,8 @@ body { background: var(--bg); color: var(--text); line-height: 1.6; }
 .card { background: white; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); transition: 0.4s; display: flex; flex-direction: column; }
 .card:hover { transform: translateY(-12px); border-color: var(--primary); box-shadow: 0 30px 60px rgba(0, 70, 255, 0.1); }
 
-/* Ajuste Fixo para Imagens */
-.img-box { height: 200px; background: #e2e8f0; overflow: hidden; position: relative; }
-.img-box img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    transition: 0.6s; 
-    display: block;
-}
+.img-box { height: 200px; background: #e2e8f0; overflow: hidden; }
+.img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
 .card:hover .img-box img { transform: scale(1.1); }
 
 .info { padding: 24px; flex-grow: 1; }
