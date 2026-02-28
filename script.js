@@ -1,21 +1,21 @@
-// Inicializar ícones do Lucide
+// Inicializa os ícones modernos do Lucide
 lucide.createIcons();
 
-// Efeito de mudar a navbar ao rolar
+// Efeito de rolagem na Navbar
 window.addEventListener('scroll', () => {
-    const nav = document.querySelector('.navbar');
+    const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
-        nav.style.padding = '1rem 10%';
-        nav.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+        navbar.style.padding = '0.8rem 8%';
+        navbar.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
     } else {
-        nav.style.padding = '1.5rem 10%';
-        nav.style.boxShadow = 'none';
+        navbar.style.padding = '1.2rem 8%';
+        navbar.style.boxShadow = 'none';
     }
 });
 
-// Animação simples de entrada para os cards
+// Revelação suave (Fade-in) ao rolar a página
 const observerOptions = {
-    threshold: 0.1
+    threshold: 0.15
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -27,9 +27,10 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-document.querySelectorAll('.service-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = 'all 0.6s ease-out';
-    observer.observe(card);
+// Aplicar animação nos itens de serviços e portfólio
+document.querySelectorAll('.service-card, .portfolio-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'all 0.8s ease-out';
+    observer.observe(el);
 });
