@@ -1,37 +1,48 @@
 /**
- * RAZGO - Script de Interatividade e Performance
+ * RAZGO | Soluções Digitais
+ * Core Script - Interatividade e Performance
  */
 
-// 1. Inicializa os ícones do Lucide
+// 1. Inicializa os ícones da biblioteca Lucide
+// Isso transforma as tags <i data-lucide="..."> em SVGs modernos
 lucide.createIcons();
 
-// 2. Elementos de Navegação
+// 2. Seleção de Elementos Globais
 const menuBtn = document.getElementById('menu-btn');
 const navLinks = document.getElementById('nav-links');
 const overlay = document.getElementById('overlay');
+const navbar = document.querySelector('.navbar');
 
 /**
- * Função para alternar o Menu Mobile
+ * Função para Alternar Menu Mobile
+ * Gerencia as classes 'active' e troca o ícone de hambúrguer por 'X'
  */
 function toggleMenu() {
     navLinks.classList.toggle('active');
     overlay.classList.toggle('active');
     
-    // Altera ícone do botão
-    const icon = menuBtn.querySelector('i');
+    // Altera o ícone visualmente
+    const iconTag = menuBtn.querySelector('i');
     if (navLinks.classList.contains('active')) {
-        icon.setAttribute('data-lucide', 'x');
+        iconTag.setAttribute('data-lucide', 'x');
     } else {
-        icon.setAttribute('data-lucide', 'menu');
+        iconTag.setAttribute('data-lucide', 'menu');
     }
+    
+    // Re-processa os ícones para aplicar a mudança
     lucide.createIcons();
 }
 
-// Listeners
-menuBtn.addEventListener('click', toggleMenu);
+// 3. Event Listeners para o Menu
+menuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
+});
+
+// Fecha o menu ao clicar no overlay (fundo escurecido)
 overlay.addEventListener('click', toggleMenu);
 
-// Fecha menu ao clicar em links (âncoras)
+// Fecha o menu automaticamente ao clicar em qualquer link da navegação
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         if (navLinks.classList.contains('active')) {
@@ -41,16 +52,17 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 });
 
 /**
- * Ajuste de Scroll Suave para o Header Fixo
+ * 4. Efeito de Scroll Suave com Offset
+ * Garante que o scroll não pare "em cima" do título devido à navbar fixa
  */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
         
         if (targetElement) {
-            const navHeight = document.querySelector('.navbar').offsetHeight;
+            e.preventDefault();
+            const navHeight = navbar.offsetHeight;
             const targetPosition = targetElement.offsetTop - navHeight;
 
             window.scrollTo({
@@ -60,3 +72,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+/**
+ * 5. Dinâmica da Navbar ao Scroll
+ * Adiciona uma sombra e escurece o fundo ao rolar a página
+ */
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+        navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
+        navbar.style.background = 'rgba(10, 10, 12, 0.98)';
+    } else {
+        navbar.style.boxShadow = 'none';
+        navbar.style.background = 'rgba(10, 10, 12, 0.95)';
+    }
+});
+
+// 6. Log de Inicialização (Opcional - Debug)
+console.log('RAZGO Engine: Ativa e carregando 96 modelos.');
