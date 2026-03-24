@@ -1,39 +1,37 @@
 /**
- * RAZGO - Script de Interatividade
+ * RAZGO - Script de Interatividade e Performance
  */
 
-// 1. Inicializa os ícones do Lucide (Transforma i tags em SVGs)
+// 1. Inicializa os ícones do Lucide
 lucide.createIcons();
 
-// 2. Elementos do Menu
+// 2. Elementos de Navegação
 const menuBtn = document.getElementById('menu-btn');
 const navLinks = document.getElementById('nav-links');
 const overlay = document.getElementById('overlay');
 
 /**
- * Alterna o estado do menu mobile
+ * Função para alternar o Menu Mobile
  */
 function toggleMenu() {
     navLinks.classList.toggle('active');
     overlay.classList.toggle('active');
     
-    // Altera o ícone entre 'menu' e 'x'
-    const iconTag = menuBtn.querySelector('i');
+    // Altera ícone do botão
+    const icon = menuBtn.querySelector('i');
     if (navLinks.classList.contains('active')) {
-        iconTag.setAttribute('data-lucide', 'x');
+        icon.setAttribute('data-lucide', 'x');
     } else {
-        iconTag.setAttribute('data-lucide', 'menu');
+        icon.setAttribute('data-lucide', 'menu');
     }
-    
-    // Re-renderiza o ícone alterado
     lucide.createIcons();
 }
 
-// Ouvintes de Eventos
+// Listeners
 menuBtn.addEventListener('click', toggleMenu);
 overlay.addEventListener('click', toggleMenu);
 
-// 3. Fechar menu automaticamente ao clicar em um link de âncora
+// Fecha menu ao clicar em links (âncoras)
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         if (navLinks.classList.contains('active')) {
@@ -42,14 +40,16 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
-// 4. Scroll Suave Manual (Opcional, o CSS já faz, mas garante compatibilidade)
+/**
+ * Ajuste de Scroll Suave para o Header Fixo
+ */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        e.preventDefault();
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
         
         if (targetElement) {
-            e.preventDefault();
             const navHeight = document.querySelector('.navbar').offsetHeight;
             const targetPosition = targetElement.offsetTop - navHeight;
 
